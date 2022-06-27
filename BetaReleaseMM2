@@ -1,0 +1,33 @@
+if game.PlaceId == 142823291 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("Murder Mystery 2 | Premium", "BloodTheme")
+
+local PlayerT = Window:NewTab("Player")
+local OtherT = Window:NewTab("Other")
+
+local PlayerS = PlayerT:NewSection("Player")
+local OtherS = OtherT:NewSection("Other")
+
+PlayerS:NewButton("Destroy Legs", "Destroys Legs From Your Body", function()
+    local Players = game.Players
+    Players.LocalPlayer.Character.LeftFoot:Destroy()
+    Players.LocalPlayer.Character.LeftLowerLeg:Destroy()
+    Players.LocalPlayer.Character.LeftUpperLeg:Destroy()
+    Players.LocalPlayer.Character.RightFoot:Destroy()
+    Players.LocalPlayer.Character.RightLowerLeg:Destroy()
+    Players.LocalPlayer.Character.RightUpperLeg:Destroy()
+end)
+PlayerS:NewSlider("WalkSpeed", "Changes Yours WalkSpeed", 100, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+PlayerS:NewSlider("JumpPower", "Changes Yours JumpPower", 500, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+OtherS:NewKeybind("Toggle UI", "Toggles UI", Enum.KeyCode.LeftAlt, function()
+	Library:ToggleUI()
+end)
+OtherS:NewButton("Leave Game", "Kicks You From Game", function()
+    Players.LocalPlayer:Kick("You Left The Game | MM2 Premium")
+end)
+end
