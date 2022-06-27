@@ -1,7 +1,7 @@
 if game.PlaceId == 142823291 then
-    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-local Window = Library.CreateLib("Murder Mystery 2 | Premium", "BloodTheme")
+local Window = Library.CreateLib("Murder Mystery 2 | Free", "BloodTheme")
 
 local PlayerT = Window:NewTab("Player")
 local OtherT = Window:NewTab("Other")
